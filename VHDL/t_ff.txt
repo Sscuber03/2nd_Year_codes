@@ -1,0 +1,24 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity t_ff is
+port(
+	t, clock: in std_logic;
+	q: out std_logic);
+end t_ff;
+
+architecture myff of t_ff is
+	signal temp: std_logic;
+	begin
+		process(clock)
+			begin
+				if(clock = '1' and clock'event) then
+					if(t = '0') then
+						temp <= temp;
+					elsif(t = '1') then
+						temp <= not (temp);
+					end if;
+				end if;
+		end process;
+		q <= temp;
+end myff;

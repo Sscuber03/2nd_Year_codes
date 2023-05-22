@@ -1,0 +1,15 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity basic_gates is
+port(
+	a, b: in std_logic;
+	oand, oor, onot: out std_logic);
+end basic_gates;
+
+architecture mygates of basic_gates is
+	begin
+		oand <= a and b;
+		oor <= a or b;
+		onot <= not a;
+end mygates;

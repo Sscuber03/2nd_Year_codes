@@ -1,0 +1,15 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity half_sub is
+port(
+	x, y: in std_logic;
+	borrow, diff: out std_logic);
+end half_sub;
+
+architecture mysub of half_sub is
+	begin
+		diff <= x xor y;
+		borrow <= (not x) and y;
+end mysub;
+	
