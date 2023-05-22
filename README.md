@@ -1,2 +1,2 @@
-# 2nd_Year_DAA
-All DAA lab codes from 2nd year
+# 2nd_Year_codes
+All DAA and vhdl lab codes from 2nd year
