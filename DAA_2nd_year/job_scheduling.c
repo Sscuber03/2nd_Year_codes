@@ -9,17 +9,13 @@ typedef struct Job
 void displayJobSequence(Job jobs[], int dmax, int timeslot[], int maxprofit)
 {
     int i, j;
-    // required jobs
     printf("\nRequired Jobs: ");
 
     for (i = 1; i <= dmax; i++)
     {
-
         printf("%s", jobs[timeslot[i]].id);
         if (i < dmax)
-
         {
-
             printf(" -->");
         }
     }
@@ -35,7 +31,6 @@ void sort(Job jobs[], int n)
 {
     int i, j;
     Job temp;
-    // sort the jobs profit wise in descending order
     for (i = 1; i < n; i++)
     {
         for (j = 0; j < n - i; j++)
@@ -57,16 +52,12 @@ void sort(Job jobs[], int n)
 }
 void jobSequencingWithDeadline(Job jobs[], int n)
 {
-    // variables
     int i, j, k, maxprofit = 0;
-    // free time slots
     int timeslot[MAX];
-    // filled time slots
     int filledTimeSlot = 0;
-    // find max deadline value
     int dmax = 0;
-    sort(jobs, n);          // sort the jobs profit wise in descending order
-    for (i = 0; i < n; i++) // find the maximum deadline
+    sort(jobs, n);          
+    for (i = 0; i < n; i++) 
     {
 
         if (jobs[i].deadline > dmax)
@@ -74,7 +65,6 @@ void jobSequencingWithDeadline(Job jobs[], int n)
             dmax = jobs[i].deadline;
         }
     }
-    // free time slots initially set to -1 [-1 denotes EMPTY]
     for (i = 1; i <= dmax; i++)
     {
         timeslot[i] = -1;
@@ -96,14 +86,12 @@ void jobSequencingWithDeadline(Job jobs[], int n)
                 break;
             }
             k--;
-        } // endwhile
-        // if all time slots are filled then stop
+        } 
         if (filledTimeSlot == dmax)
         {
             break;
         }
-    } // endfor
-    // required profit
+    }
     for (i = 1; i <= dmax; i++)
     {
 
@@ -113,7 +101,6 @@ void jobSequencingWithDeadline(Job jobs[], int n)
 }
 int main(void)
 {
-    // variables
     int i, j, n;
     Job jobs[MAX];
     printf("\n Enter the number of jobs\n");

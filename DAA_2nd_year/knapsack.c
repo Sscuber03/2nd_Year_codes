@@ -11,7 +11,6 @@ void display(int n)
 void sort_Descending(int n, float weight[], float profit[], float ratio[])
 {
     int i, j, temp;
-    // sort
     for (i = 0; i < n; i++)
     {
         for (j = i + 1; j < n; j++)
@@ -59,7 +58,7 @@ void Greedy_fract_knapsack(int n, float weight[], float profit[], float capacity
         t_profit = t_profit + (x[i] * profit[i]);
     }
     display(n);
-} // end Greedy_fract_knapsack()
+}
 int main()
 {
     float weight[20], profit[20], capacity;
@@ -73,4 +72,4 @@ int main()
     scanf("%f", &capacity);
     Greedy_fract_knapsack(num, weight, profit, capacity);
     return (0);
-} // end main
+}

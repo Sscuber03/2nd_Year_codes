@@ -42,7 +42,7 @@ void kruskalMST(int n, int mcost[20][20])
             mincost += min;
         }
         mcost[a][b] = mcost[b][a] = INT_MAX;
-    } // end while
+    }
 }
 void display(int n, int temp[20][20])
 {

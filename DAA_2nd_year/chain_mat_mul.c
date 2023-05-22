@@ -57,7 +57,6 @@ int MatrixChainOrder(int p[], int i, int j)
         if (count < min)
             min = count;
     }
-    // Return minimum count
     return min;
 }
 int main()
